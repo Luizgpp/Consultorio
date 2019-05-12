@@ -32,6 +32,14 @@ class AuthServiceProvider extends ServiceProvider
                 return $user->hasRole($permission->roles);
             });
         }
+        /** Gate para verificar se o usuario logado é admin escapa de todas as roles*/
+
+        // Gate::before(function ($user, $ability) {
+        //     if ($user->hasRole('admin')) {
+        //         return true;
+        //     }
+        // });
+
     }
 
     protected function getPermissions()
