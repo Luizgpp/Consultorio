@@ -57,4 +57,9 @@ class User extends Authenticatable
 
         return !!$role->intersect($this->roles)->count();
     }
+
+    public function isAllowedToLogin(): bool
+    {
+        return $this->allowed === 1;
+    }
 }
