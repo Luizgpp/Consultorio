@@ -18,6 +18,13 @@ class CreateTelefonesTable extends Migration
             $table->string('ddd');
             $table->string('numero');
             $table->string('tipo');
+            $table->bigInteger('telefone_id')->unsigned();
+
+            $table->foreign('telefone_id')
+                ->references('id')
+                ->on('telefones')
+                ->onDelete('cascade');
+
             $table->timestamps();
         });
     }
