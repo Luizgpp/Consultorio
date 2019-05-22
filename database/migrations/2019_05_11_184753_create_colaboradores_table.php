@@ -17,7 +17,7 @@ class CreateColaboradoresTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('telefone_id')->unsigned();
-            $table->bigInteger('crosp_id')->unsigned();
+            $table->bigInteger('crosp_id')->unsigned()->nullable();
             $table->bigInteger('cargo_id')->unsigned();
 
             $table->foreign('user_id')
