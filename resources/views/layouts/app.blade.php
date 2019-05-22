@@ -36,7 +36,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item {{ Request::is('home') ? 'active' : ''}}">
-                        <a href="" class="nav-link ">Consultas</a>
+                        <a href="/home" class="nav-link ">Consultas</a>
                         </li>     
                         <li class="nav-item {{ Request::is('clientes') ? 'active' : ''}}">
                                 <a href="" class="nav-link">Clientes</a>
@@ -47,8 +47,8 @@
                         <li class="nav-item {{ Request::is('produtos') ? 'active' : ''}}">
                             <a href="" class="nav-link">Produtos</a>
                         </li>                        
-                        <li class="nav-item {{ Request::is('colaboradores') ? 'active' : ''}}">
-                            <a href="" class="nav-link ">Colaboradores</a>
+                        <li class="nav-item {{ Request::is('colaborador') ? 'active' : ''}}">
+                            <a href="/colaborador" class="nav-link ">Colaboradores</a>
                         </li>                        
                     </ul>
                     @endauth
