@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Colaborador;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ColaboradorController extends Controller
 {
@@ -14,8 +15,11 @@ class ColaboradorController extends Controller
      */
     public function index()
     {
-        return view('colaborador');
+        $colaboradores = Colaborador::with('user', 'cargo')->get();
+
+        return view('colaborador', compact('colaboradores'));
     }
+
 
     /**
      * Show the form for creating a new resource.
