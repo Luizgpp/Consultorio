@@ -20,4 +20,5 @@ Auth::routes();
 
 Route::middleware('IsAllowedToLogin')->group(function () {
     Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/colaborador', 'ColaboradorController@index')->name('colaborador');
 });

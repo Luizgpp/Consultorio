@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCrospsTable extends Migration
+class CreateTelefonesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,18 @@ class CreateCrospsTable extends Migration
      */
     public function up()
     {
-        Schema::create('crosps', function (Blueprint $table) {
+        Schema::create('telefones', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('numero');
+            $table->string('ddd');
+            $table->string('numero');
             $table->string('tipo');
+            $table->bigInteger('colaboradores_id')->unsigned();
+
+            $table->foreign('colaboradores_id')
+                ->references('id')
+                ->on('colaboradores')
+                ->onDelete('cascade');
+
             $table->timestamps();
         });
     }
@@ -28,6 +36,6 @@ class CreateCrospsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('crosps');
+        Schema::dropIfExists('telefones');
     }
 }
