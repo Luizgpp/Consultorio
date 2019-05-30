@@ -15,7 +15,7 @@ class CreateColaboradoresTable extends Migration
     {
         Schema::create('colaboradores', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('user_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned()->unique();
             $table->bigInteger('cargo_id')->unsigned();
             $table->string('crosp')->nullable();
 
